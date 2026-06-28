@@ -42,9 +42,15 @@ public class VentanaTickets {
                         JOptionPane.showMessageDialog(null, "⚠️ Todos los campos deben estar llenos");
                         return;
                     }
+
                     if (!estado.equalsIgnoreCase("Pendiente") && !estado.equalsIgnoreCase("Resuelto")) {
 
                         JOptionPane.showMessageDialog(null, "⚠️ El estado debe ser 'Pendiente' o 'Resuelto'");
+                        return;
+                    }
+
+                    if (gestion.buscarTiket(codigo) != null) {
+                        JOptionPane.showMessageDialog(null,"⚠️ Ya existe un ticket con ese código");
                         return;
                     }
 
