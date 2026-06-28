@@ -20,9 +20,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Michael-Garavi"
+  }
+}]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/Isaacs32-15/ProyectoFinal.git",
+    "url": "https://github.com/Michael-Garavi/ProyectoFinal.git",
     "accountId": "9ff6cd8c-21fe-495f-acc6-5f59fbc92796"
   }
 }]]></component>
@@ -139,7 +145,7 @@
       <updated>1782621582986</updated>
       <workItem from="1782671844466" duration="1159000" />
       <workItem from="1782673259220" duration="5840000" />
-      <workItem from="1782679163152" duration="5617000" />
+      <workItem from="1782679163152" duration="6192000" />
     </task>
     <servers />
   </component>

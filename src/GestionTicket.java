@@ -8,6 +8,7 @@ public class GestionTicket {
     //---------Crear Tickets------
     public void CrearTicket(Ticket ticket){
         Listatickets.add(ticket);
+        arbol.insertar(ticket);
     }
     //---------Buscar ticket------
     public Ticket buscarTiket(int codigo) {
