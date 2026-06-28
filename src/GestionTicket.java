@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
 public class GestionTicket {
-    private ArrayList<Ticket> Listatickets= new ArrayList<>();
+    private ArrayList<Ticket> Listatickets = new ArrayList<>();
     private ArbolTickets arbol = new ArbolTickets();
 
-
     //---------Crear Tickets------
-    public void CrearTicket(Ticket ticket){
+    public void CrearTicket(Ticket ticket) {
         Listatickets.add(ticket);
-        arbol.insertar(ticket);
+        reconstruirArbol();
     }
-    //---------Buscar ticket------
+
+    //---------Buscar ticket en lista------
     public Ticket buscarTiket(int codigo) {
         for (Ticket t : Listatickets) {
             if (t.getCodigoTicket() == codigo) {
@@ -19,18 +19,21 @@ public class GestionTicket {
         }
         return null;
     }
-    //-------Mostrar Detalle de ticket
-    public void mostrarTickets(int codigo){
-        Ticket t =  buscarTiket(codigo);
+
+    //-------Mostrar Detalle de ticket------
+    public void mostrarTickets(int codigo) {
+        Ticket t = buscarTiket(codigo);
+
         if (t != null) {
             System.out.println(t);
         } else {
             System.out.println("Ticket no encontrado");
         }
     }
-    //-----Eliminar ticketPendiente------------
+
+    //-----Eliminar ticket Pendiente------------
     public boolean eliminarTicketPendiente(int codigo) {
-        Ticket ticket = arbol.buscar(codigo);
+        Ticket ticket = buscarTiket(codigo);
 
         if (ticket == null
                 || ticket.getEstado() == null
@@ -39,13 +42,13 @@ public class GestionTicket {
         }
 
         boolean eliminado = Listatickets.removeIf(t ->
-                t.getCodigoTicket() == codigo &&
-                        t.getEstado() != null &&
-                        t.getEstado().trim().equalsIgnoreCase("Pendiente")
+                t.getCodigoTicket() == codigo
+                        && t.getEstado() != null
+                        && t.getEstado().trim().equalsIgnoreCase("Pendiente")
         );
 
         if (eliminado) {
-            arbol.eliminar(codigo);
+            reconstruirArbol();
         }
 
         return eliminado;
@@ -59,16 +62,23 @@ public class GestionTicket {
         return arbol.buscar(codigo);
     }
 
-
     public boolean editarTicket(int codigo, String nuevaDescripcion, String nuevoEstado) {
         for (Ticket t : Listatickets) {
             if (t.getCodigoTicket() == codigo) {
                 t.setDescripcion(nuevaDescripcion);
                 t.setEstado(nuevoEstado);
+                reconstruirArbol();
                 return true;
             }
         }
         return false;
     }
 
+    private void reconstruirArbol() {
+        arbol = new ArbolTickets();
+
+        for (Ticket ticket : Listatickets) {
+            arbol.insertar(ticket);
+        }
+    }
 }

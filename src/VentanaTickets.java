@@ -84,7 +84,7 @@ public class VentanaTickets {
                 if (tickets.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "No hay tickets");
                 } else {
-                    txtArea.setText(tickets);
+                    txtArea.setText(gestion.obtenerTicketsInOrder());
                 }
 
             }
