@@ -19,7 +19,6 @@ public class GrafoTickets {
         grafo.get(origen).add(destino);
     }
 
-    // CORREGIDO: Cliente -> Ticket -> Soporte
     public void construirGrafo(ArrayList<Ticket> tickets) {
 
         grafo.clear();

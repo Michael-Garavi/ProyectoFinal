@@ -8,8 +8,7 @@ public class HistorialSeguimientoForm {
 
     private JTextField CODIGOTextField;
     private JSpinner spinnerCodigo;
-    private JTextField RESPUESTATextField;
-    private JTextField RESULTADOTextField;
+    private JTextField txtResultado1;
 
     private JButton btnVerEstado;
     private JButton btnVerRespuestas;
@@ -21,6 +20,8 @@ public class HistorialSeguimientoForm {
     private JTextArea txtRespuesta;
     private JTextArea txtResultado;
     private JButton btnRTHisto;
+    private JButton btnCerrarTicket;
+    private JTextField txtRespuesta1;
 
     private GestionTicket gestion;
     private ModuloHistorialSeguimiento historial;
@@ -40,8 +41,6 @@ public class HistorialSeguimientoForm {
         this.usuarioLogueado = usuarioLogueado;
 
         CODIGOTextField.setText("CODIGO");
-        RESPUESTATextField.setText("RESPUESTA");
-        RESULTADOTextField.setText("RESULTADO");
 
         spinnerCodigo.setModel(new SpinnerNumberModel(1, 1, 1000, 1));
 
@@ -56,7 +55,20 @@ public class HistorialSeguimientoForm {
         btnSeguimientoCompleto.addActionListener(e -> verSeguimientoCompleto());
 
         btnLimpiar.addActionListener(e -> limpiar());
-        btnRTHisto.addActionListener(e -> registrarTicket());
+
+        btnRTHisto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                registrarTicket();
+            }
+        });
+
+        btnCerrarTicket.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cerrarTicket();
+            }
+        });
     }
 
     private void registrarTicket() {
@@ -147,6 +159,10 @@ public class HistorialSeguimientoForm {
     private void agregarRespuesta() {
         int codigo = (int) spinnerCodigo.getValue();
         String mensaje = txtRespuesta.getText();
+        String respuesta = txtRespuesta1.getText();
+        String resultado = txtResultado1.getText();
+
+        String mensajeCompleto = "Mensaje: " + mensaje + "\nRespuesta: " + respuesta + "\nResultado: " + resultado;
 
         if (!validarHistorial(codigo)) {
             return;
@@ -164,7 +180,7 @@ public class HistorialSeguimientoForm {
         }
 
         try {
-            historial.agregarRespuesta(codigo, mensaje, autor);
+            historial.agregarRespuesta(codigo, mensajeCompleto, autor);
 
             Ticket ticket = gestion.buscarTiket(codigo);
             ticket.setEstado("ATENDIDO");
@@ -246,7 +262,7 @@ public class HistorialSeguimientoForm {
         ).Principal);
 
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.pack();
+        frame.setSize(1980, 1800);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

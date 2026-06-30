@@ -12,6 +12,9 @@ public class LoginForm {
     private JButton btnIngresar;
 
     GestionarUsuarios gestorUsuarios = new GestionarUsuarios();
+    GestionTicket gestion = new GestionTicket();
+    ModuloHistorialSeguimiento historial = new ModuloHistorialSeguimiento();
+    GestionarReportes reportes = new GestionarReportes(gestion);
 
     public LoginForm() {
         btnIngresar.addActionListener(new ActionListener() {
@@ -66,21 +69,21 @@ public class LoginForm {
         abrirVentanaPorRol(usuarioLogueado);
     }
 
-    private void abrirVentanaPorRol(Usuario usuarioLogueado) {
+    private void abrirVentanaPorRol(Usuario usuarioLogueado ) {
         String rol = usuarioLogueado.getRol();
 
         if (rol.equals("CLIENTE")) {
-            ClienteForm.abrir(usuarioLogueado);
+            ClienteForm.abrir(usuarioLogueado,gestion,historial,reportes);
 
             JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(panelPrincipal);
             ventanaActual.dispose();
         } else if (rol.equals("TECNICO")) {
-            TecnicoForm.abrir(usuarioLogueado);
+            TecnicoForm.abrir(usuarioLogueado,gestion,historial,reportes);
 
             JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(panelPrincipal);
             ventanaActual.dispose();
         } else if (rol.equals("OPERATIVO")) {
-            OperativoForm.abrir(usuarioLogueado);
+            OperativoForm.abrir( usuarioLogueado,gestion,historial,reportes);
 
             JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(panelPrincipal);
             ventanaActual.dispose();

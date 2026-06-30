@@ -19,6 +19,7 @@ public class ModuloHistorialSeguimiento {
         }
     }
 
+
     public HistorialTicket buscarHistorial(int codigoTicket) {
         for (HistorialTicket h : historiales) {
             if (h.getCodigoTicket() == codigoTicket) {

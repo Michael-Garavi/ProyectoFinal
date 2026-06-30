@@ -18,16 +18,21 @@ public class VentanaTickets {
     private JComboBox<String> comboBox2 ;
     private JButton btnVolver;
 
-    private GestionTicket gestion = new GestionTicket();
+    private GestionTicket gestion ;
 
     private ArbolTickets arbol = new ArbolTickets();
 
     private Usuario usuarioLogueado;
+    private ModuloHistorialSeguimiento historial ;
+    private GestionarReportes reportes;
 
 
 
-    public VentanaTickets (Usuario usuarioLogueado){
+    public VentanaTickets (Usuario usuarioLogueado ,GestionTicket gestion, ModuloHistorialSeguimiento historial, GestionarReportes reportes){
         this.usuarioLogueado = usuarioLogueado;
+        this.historial = historial;
+        this.gestion = gestion;
+        this.reportes = reportes;
         comboBox1.setModel(new DefaultComboBoxModel<>(new String[]{
                 "ALTA",
                 "MEDIA",
@@ -189,13 +194,13 @@ public class VentanaTickets {
         String rol = usuarioLogueado.getRol();
 
         if (rol.equalsIgnoreCase("Cliente")) {
-            ClienteForm.abrir(usuarioLogueado);
+            ClienteForm.abrir(usuarioLogueado,gestion,historial,reportes);
 
         } else if (rol.equalsIgnoreCase("Tecnico") || rol.equalsIgnoreCase("Técnico")) {
-            TecnicoForm.abrir(usuarioLogueado);
+            TecnicoForm.abrir(usuarioLogueado,gestion,historial,reportes);
 
         } else if (rol.equalsIgnoreCase("Operador") || rol.equalsIgnoreCase("Operativo")) {
-            OperativoForm.abrir(usuarioLogueado);
+            OperativoForm.abrir(usuarioLogueado,gestion,historial,reportes);
 
         } else {
             JOptionPane.showMessageDialog(null, "Rol de usuario no reconocido");
@@ -206,9 +211,9 @@ public class VentanaTickets {
         ventanaActual.dispose();
     }
 
-    public static void abrir(Usuario usuarioLogueado) {
+    public static void abrir(Usuario usuarioLogueado,GestionTicket gestion, ModuloHistorialSeguimiento historial, GestionarReportes reportes) {
         JFrame frame = new JFrame("VentanaTickets");
-        frame.setContentPane(new VentanaTickets(usuarioLogueado).VentanaTickets);
+        frame.setContentPane(new VentanaTickets(usuarioLogueado, gestion, historial, reportes).VentanaTickets);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setSize(1200,700);

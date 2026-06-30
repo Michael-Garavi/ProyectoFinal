@@ -51,6 +51,7 @@ public class GestionarReportes {
         int tecnico = 0;
         int operativo = 0;
         int conocimiento = 0;
+        int soporte = 0;
 
         ArrayList<Ticket> lista = gestionarTickets.obtenerTodos();
 
@@ -69,6 +70,10 @@ public class GestionarReportes {
                 case "CONOCIMIENTO":
                     conocimiento++;
                     break;
+
+                case "SOPORTE":
+                    soporte++;
+                    break;
             }
 
         }
@@ -76,7 +81,8 @@ public class GestionarReportes {
         return "=========== REPORTE POR TIPO ===========\n\n"
                 + "TECNICO      : " + tecnico + "\n"
                 + "OPERATIVO    : " + operativo + "\n"
-                + "CONOCIMIENTO : " + conocimiento;
+                + "CONOCIMIENTO : " + conocimiento + "\n"
+                + "SOPORTE      : " + soporte;
 
     }
 

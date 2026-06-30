@@ -12,12 +12,11 @@ public class ClasificacionForm {
     private JButton btnLimpiar;
 
     GestionarClasificacion gestor = new GestionarClasificacion();
+    private GestionTicket gestion;
 
-    public JPanel getPanelPrincipal() {
-        return panelPrincipal;
-    }
 
-    public ClasificacionForm() {
+    public ClasificacionForm(GestionTicket gestion) {
+        this.gestion = gestion;
 
         txtResumen.setEditable(false);
 
@@ -37,24 +36,35 @@ public class ClasificacionForm {
     }
 
     private void clasificar() {
-        try {
-            String tipo = cmbTipoSoporte.getSelectedItem().toString();
 
-            Clasificacion clasificacion = gestor.clasificarTicket(tipo);
-            String area = gestor.asignarAreaResponsable(tipo);
+        String tipoSeleccionado =
+                cmbTipoSoporte.getSelectedItem().toString();
 
-            txtResumen.setText("");
-            txtResumen.append("RESUMEN DE CLASIFICACIÓN\n");
-            txtResumen.append("Tipo de soporte: " + clasificacion.getTipoSoporte() + "\n");
-            txtResumen.append("Prioridad asignada: " + clasificacion.getPrioridad() + "\n");
-            txtResumen.append("Área responsable: " + area + "\n");
+        StringBuilder resultado = new StringBuilder();
 
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null,
-                    ex.getMessage(),
-                    "Validación",
-                    JOptionPane.WARNING_MESSAGE);
+        resultado.append("TICKETS CLASIFICADOS\n\n");
+
+        for (Ticket t : gestion.obtenerTodos()) {
+
+            if (t.getTipoSoporte().equalsIgnoreCase(tipoSeleccionado)) {
+
+                resultado.append("Código: ")
+                        .append(t.getCodigoTicket())
+                        .append("\n");
+
+                resultado.append("Cliente: ")
+                        .append(t.getCliente())
+                        .append("\n");
+
+                resultado.append("Tipo: ")
+                        .append(t.getTipoSoporte())
+                        .append("\n");
+
+                resultado.append("---------------------\n");
+            }
         }
+
+        txtResumen.setText(resultado.toString());
     }
 
     private void limpiar() {
@@ -62,10 +72,21 @@ public class ClasificacionForm {
         txtResumen.setText("");
     }
 
-    public static void main(String[] args) {
+    public JPanel getPanelPrincipal() {
+        return panelPrincipal;
+    }
+
+
+
+    public static void abrir(GestionTicket gestion) {
+
         JFrame frame = new JFrame("Clasificación y Priorización");
-        frame.setContentPane(new ClasificacionForm().panelPrincipal);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.setContentPane(
+                new ClasificacionForm(gestion).panelPrincipal
+        );
+
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
