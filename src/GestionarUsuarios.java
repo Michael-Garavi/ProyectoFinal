@@ -10,9 +10,10 @@ public class GestionarUsuarios {
 
     private void cargarUsuarios() {
         usuarios.add(new Usuario(1, "Matias Galarza", "cliente1", "123", "CLIENTE"));
-        usuarios.add(new Usuario(2, "Carlos Técnico", "tecnico1", "123", "TECNICO"));
-        usuarios.add(new Usuario(3, "Ana Operativa", "operativo1", "123", "OPERATIVO"));
-        usuarios.add(new Usuario(4, "Luis Conocimiento", "operativo2", "123", "OPERATIVO"));
+        usuarios.add(new Usuario(2, "Juan Administrador", "cliente2", "123", "CLIENTE"));
+        usuarios.add(new Usuario(3, "Carlos Técnico", "tecnico1", "123", "TECNICO"));
+        usuarios.add(new Usuario(4, "Ana Operativa", "operativo1", "123", "OPERATIVO"));
+        usuarios.add(new Usuario(5, "Luis Conocimiento", "operativo2", "123", "OPERATIVO"));
     }
 
     public Usuario iniciarSesion(String usuarioIngresado, String contraseñaIngresado) {

@@ -13,7 +13,12 @@ public class ClasificacionForm {
 
     GestionarClasificacion gestor = new GestionarClasificacion();
 
+    public JPanel getPanelPrincipal() {
+        return panelPrincipal;
+    }
+
     public ClasificacionForm() {
+
         txtResumen.setEditable(false);
 
         btnClasificar.addActionListener(new ActionListener() {

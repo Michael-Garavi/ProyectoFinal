@@ -9,8 +9,11 @@ public class ClienteForm {
     private JButton btnCrearTicket;
     private JButton btnVerHistorial;
     private JButton btnCerrarSesion;
+    private JTextArea txtHistoClientAc;
 
     private Usuario usuarioLogueado;
+    private GestionTicket gestion = new GestionTicket();
+
 
     public ClienteForm(Usuario usuarioLogueado) {
         this.usuarioLogueado = usuarioLogueado;
@@ -20,14 +23,15 @@ public class ClienteForm {
         btnCrearTicket.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Funcionalidad pendiente: Crear Ticket");
+
+                abrirVentanaTickets();
             }
         });
 
         btnVerHistorial.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Funcionalidad pendiente: Ver Historial");
+                verHistorialCliente();
             }
         });
 
@@ -37,6 +41,25 @@ public class ClienteForm {
                 cerrarSesion();
             }
         });
+        btnVerHistorial.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+    }
+
+    private void verHistorialCliente() {
+        txtHistoClientAc.setText(gestion.obtenerTicketsInOrder());
+        txtHistoClientAc.setEditable(false);
+    }
+
+
+    private void abrirVentanaTickets() {
+        VentanaTickets.abrir(usuarioLogueado);
+
+        JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(panelPrincipal2);
+        ventanaActual.dispose();
     }
 
     private void cerrarSesion() {
@@ -55,7 +78,7 @@ public class ClienteForm {
         JFrame frame = new JFrame("Panel Cliente - URBE RED");
         frame.setContentPane(new ClienteForm(usuarioLogueado).panelPrincipal2);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+        frame.setSize(700, 500);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

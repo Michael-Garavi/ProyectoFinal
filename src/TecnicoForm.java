@@ -20,14 +20,20 @@ public class TecnicoForm {
         btnVerTickets.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Funcionalidad pendiente: Ver Tickets Técnicos");
+                JFrame frame = new JFrame("Clasificación de Tickets");
+                frame.setContentPane(new ClasificacionForm().getPanelPrincipal());
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setSize(700, 500);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+
             }
         });
 
         btnResponderTicket.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Funcionalidad pendiente: Responder Ticket");
+                abrirVentanaTickets();
             }
         });
 
@@ -45,12 +51,16 @@ public class TecnicoForm {
         JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(panelPrincipal3);
         ventanaActual.dispose();
     }
+    private void abrirVentanaTickets() {
+        VentanaTickets.abrir(usuarioLogueado);
+    }
+
 
     public static void abrir(Usuario usuarioLogueado) {
         JFrame frame = new JFrame("Panel Soporte Técnico - URBE RED");
         frame.setContentPane(new TecnicoForm(usuarioLogueado).panelPrincipal3);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+        frame.setSize(700, 500);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

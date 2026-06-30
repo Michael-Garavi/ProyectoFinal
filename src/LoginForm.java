@@ -92,7 +92,7 @@ public class LoginForm {
         JFrame frame = new JFrame("Login - URBE RED");
         frame.setContentPane(new LoginForm().panelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+        frame.setSize(700, 500);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
@@ -101,7 +101,7 @@ public class LoginForm {
         JFrame frame = new JFrame("Login - URBE RED");
         frame.setContentPane(new LoginForm().panelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+        frame.setSize(700, 500);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

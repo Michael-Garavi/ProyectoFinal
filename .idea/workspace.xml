@@ -4,7 +4,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89fdbc68-a700-4a3c-b72a-1cc1ca193ef5" name="Changes" comment="" />
+    <list default="true" id="89fdbc68-a700-4a3c-b72a-1cc1ca193ef5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DatosSistema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GestionarReportes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GrafoTickets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HistorialSeguimientoForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HistorialSeguimientoForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HistorialTicket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ModuloHistorialSeguimiento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Respuesta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/ClasificacionForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/ClasificacionForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/ClasificacionForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/ClasificacionForm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/ClasificacionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/ClasificacionForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/ClienteForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/ClienteForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/ClienteForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/ClienteForm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/ClienteForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/ClienteForm$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/ClienteForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/ClienteForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/GestionTicket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/GestionTicket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/GestionarUsuarios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/GestionarUsuarios.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/LoginForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/LoginForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/OperativoForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/OperativoForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/OperativoForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/OperativoForm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/OperativoForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/OperativoForm$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/OperativoForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/OperativoForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/TecnicoForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/TecnicoForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/TecnicoForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/TecnicoForm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/TecnicoForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/TecnicoForm$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/TecnicoForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/TecnicoForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/Ticket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto/VentanaTickets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClasificacionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClasificacionForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClienteForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClienteForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClienteForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClienteForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GestionTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestionTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GestionarUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestionarUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OperativoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OperativoForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TecnicoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TecnicoForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VentanaTickets.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaTickets.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VentanaTickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaTickets.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,18 +66,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Michael-Garavi"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Michael-Garavi&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Michael-Garavi/ProyectoFinal.git",
-    "accountId": "9ff6cd8c-21fe-495f-acc6-5f59fbc92796"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Michael-Garavi/ProyectoFinal.git&quot;,
+    &quot;accountId&quot;: &quot;9ff6cd8c-21fe-495f-acc6-5f59fbc92796&quot;
   }
-}]]></component>
+}</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
@@ -100,34 +146,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.LoginForm.executor": "Run",
-    "Application.VentanaTickets.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "278",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/micha/Documents/ProyectoFinal-main/ProyectoFinal-main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ClasificacionForm.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginForm.executor&quot;: &quot;Run&quot;,
+    &quot;Application.VentanaTickets.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;278&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/micha/Documents/ProyectoFinal-main/ProyectoFinal-main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -145,11 +193,21 @@
       <updated>1782621582986</updated>
       <workItem from="1782671844466" duration="1159000" />
       <workItem from="1782673259220" duration="5840000" />
-      <workItem from="1782679163152" duration="7228000" />
+      <workItem from="1782679163152" duration="7418000" />
+      <workItem from="1782705251585" duration="25000" />
+      <workItem from="1782705789638" duration="2441000" />
+      <workItem from="1782765993585" duration="1618000" />
+      <workItem from="1782776539874" duration="18951000" />
+      <workItem from="1782796136281" duration="111000" />
+      <workItem from="1782796450038" duration="153000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -14,15 +14,35 @@ public class VentanaTickets {
     private JSpinner spinnerCodigo;
     private JTextArea txtArea;
     private JButton btnEditar;
+    private JComboBox<String> comboBox1;
+    private JComboBox<String> comboBox2 ;
+    private JButton btnVolver;
 
     private GestionTicket gestion = new GestionTicket();
 
     private ArbolTickets arbol = new ArbolTickets();
 
+    private Usuario usuarioLogueado;
 
 
 
-    public VentanaTickets (){
+    public VentanaTickets (Usuario usuarioLogueado){
+        this.usuarioLogueado = usuarioLogueado;
+        comboBox1.setModel(new DefaultComboBoxModel<>(new String[]{
+                "ALTA",
+                "MEDIA",
+                "BAJA"
+        }));
+
+        comboBox2.setModel(new DefaultComboBoxModel<>(new String[]{
+                "TECNICO",
+                "SOPORTE",
+                "OPERATIVO",
+                "CONOCIMIENTO"
+        }));
+
+
+
         arbol = new ArbolTickets();
 
         spinnerCodigo.setModel(new SpinnerNumberModel(1, 1, 1000, 1));
@@ -36,31 +56,41 @@ public class VentanaTickets {
                     txtArea.setText("");
 
                     int codigo = (int) spinnerCodigo.getValue();
-                    String descripcion = txtDescripcionTik.getText().trim();
-                    String estado = txtEstadoTik.getText().trim();
-                    if (descripcion.isEmpty() || estado.isEmpty()) {
+                    String cliente = usuarioLogueado.getNombre();
+                    String descripcion = txtDescripcionTik.getText();
+                    String tipoSoporte = comboBox2.getSelectedItem().toString();
+                    String prioridad = comboBox1.getSelectedItem().toString();
+                    String estado = "Pendiente";
+
+
+                    if (descripcion.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "⚠️ Todos los campos deben estar llenos");
                         return;
                     }
 
-                    if (!estado.equalsIgnoreCase("Pendiente") && !estado.equalsIgnoreCase("Resuelto")) {
 
-                        JOptionPane.showMessageDialog(null, "⚠️ El estado debe ser 'Pendiente' o 'Resuelto'");
-                        return;
-                    }
+                    //txtEstadoTik.invalidate();
 
                     if (gestion.buscarTiket(codigo) != null) {
-                        JOptionPane.showMessageDialog(null,"⚠️ Ya existe un ticket con ese código");
+                        JOptionPane.showMessageDialog(null, "⚠️ Ya existe un ticket con ese código");
                         return;
                     }
 
-                    Ticket t = new Ticket(codigo, descripcion, estado);
+
+
+                    cliente = cliente.trim();
+
+                    String respuesta = "";
+                    String tecnico = "Sin asignar";
+
+                    Ticket t = new Ticket(codigo, cliente, descripcion, tipoSoporte, prioridad, estado);
+
                     gestion.CrearTicket(t);
                     arbol.insertar(t);
 
-                    JOptionPane.showMessageDialog(null,"✅ Se ha creado un ticket correctamente " +codigo);
+                    JOptionPane.showMessageDialog(null, "✅ Se ha creado un ticket correctamente " + codigo);
 
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     txtArea.setText(ex.getMessage());
                 }
             }
@@ -147,13 +177,46 @@ public class VentanaTickets {
                 }
             }
         });
+        btnVolver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                volverSegunRol();
+            }
+        });
     }
 
-    public static void main(String[] args) {
+    private void volverSegunRol() {
+        String rol = usuarioLogueado.getRol();
+
+        if (rol.equalsIgnoreCase("Cliente")) {
+            ClienteForm.abrir(usuarioLogueado);
+
+        } else if (rol.equalsIgnoreCase("Tecnico") || rol.equalsIgnoreCase("Técnico")) {
+            TecnicoForm.abrir(usuarioLogueado);
+
+        } else if (rol.equalsIgnoreCase("Operador") || rol.equalsIgnoreCase("Operativo")) {
+            OperativoForm.abrir(usuarioLogueado);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Rol de usuario no reconocido");
+            return;
+        }
+
+        JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(btnVolver);
+        ventanaActual.dispose();
+    }
+
+    public static void abrir(Usuario usuarioLogueado) {
         JFrame frame = new JFrame("VentanaTickets");
-        frame.setContentPane(new VentanaTickets().VentanaTickets);
+        frame.setContentPane(new VentanaTickets(usuarioLogueado).VentanaTickets);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+
+        frame.setSize(1200,700);
+        frame.setLocationRelativeTo(null);
+
+
         frame.setVisible(true);
     }
+
+
 }

@@ -10,7 +10,10 @@ public class OperativoForm {
     private JButton btnResponderTicket;
     private JButton btnCerrarSesion;
 
+    private GestionTicket gestion;
     private Usuario usuarioLogueado;
+    private ModuloHistorialSeguimiento historial;
+
 
     public OperativoForm(Usuario usuarioLogueado) {
         this.usuarioLogueado = usuarioLogueado;
@@ -20,14 +23,14 @@ public class OperativoForm {
         btnVerTickets.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Funcionalidad pendiente: Ver Tickets Operativos");
+                HistorialSeguimientoForm.abrir(gestion, historial, usuarioLogueado);
             }
         });
 
         btnResponderTicket.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Funcionalidad pendiente: Responder Ticket");
+                abrirVentanaTickets();
             }
         });
 
@@ -39,6 +42,7 @@ public class OperativoForm {
         });
     }
 
+
     private void cerrarSesion() {
         LoginForm.abrir();
 
@@ -46,11 +50,18 @@ public class OperativoForm {
         ventanaActual.dispose();
     }
 
+    private void abrirVentanaTickets() {
+        VentanaTickets.abrir(usuarioLogueado);
+    }
+
+
+
+
     public static void abrir(Usuario usuarioLogueado) {
         JFrame frame = new JFrame("Panel Soporte Operativo - URBE RED");
         frame.setContentPane(new OperativoForm(usuarioLogueado).panelPrincipal4);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+        frame.setSize(700, 500);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

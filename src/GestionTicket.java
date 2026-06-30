@@ -1,14 +1,19 @@
 import java.util.ArrayList;
 
 public class GestionTicket {
-    private ArrayList<Ticket> Listatickets = new ArrayList<>();
-    private ArbolTickets arbol = new ArbolTickets();
+    private static ArrayList<Ticket> Listatickets = new ArrayList<>();
+    private static ArbolTickets arbol = new ArbolTickets();
 
     //---------Crear Tickets------
     public void CrearTicket(Ticket ticket) {
         Listatickets.add(ticket);
         reconstruirArbol();
     }
+
+    public ArrayList<Ticket> obtenerTodos() {
+        return new ArrayList<>(Listatickets);
+    }
+
 
     //---------Buscar ticket en lista------
     public Ticket buscarTiket(int codigo) {
@@ -80,5 +85,31 @@ public class GestionTicket {
         for (Ticket ticket : Listatickets) {
             arbol.insertar(ticket);
         }
+    }
+
+    //-----Mostrar solo tickets del cliente actual------
+    public String mostrarTicketsPorCliente(String clienteActual) {
+        StringBuilder historial = new StringBuilder();
+
+        for (Ticket ticket : Listatickets) {
+            if (ticket.getCliente() != null
+                    && ticket.getCliente().equalsIgnoreCase(clienteActual)) {
+
+                historial.append(ticket)
+                        .append("\n--------------------------\n");
+            }
+        }
+
+        if (historial.length() == 0) {
+            return "No tienes tickets registrados.";
+        }
+
+        return historial.toString();
+    }
+
+
+
+    public int cantidadTickets() {
+        return Listatickets.size();
     }
 }
